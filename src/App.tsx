@@ -1,7 +1,8 @@
-import { Box, Button, Text, VStack } from "@chakra-ui/react";
+import { Box, Text, VStack } from "@chakra-ui/react";
 import "./index.css";
 import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import { ButtonWithChild } from "./ButtonWithChild";
 
 const messages = ["Learn React *", "Apply for Jobs", "Invest Dinero"];
 
@@ -60,12 +61,12 @@ function App() {
 					Step {step}: {messages[step - 1]}
 				</Text>
 				<Box display='flex' justifyContent='space-between'>
-					<Button backgroundColor='#7950f2' color='white' onClick={previous}>
-						Previous
-					</Button>
-					<Button backgroundColor='#7950f2' color='white' onClick={goNext}>
-						Next
-					</Button>
+					<ButtonWithChild handleClick={previous}>
+						👈 Previous
+					</ButtonWithChild>
+					<ButtonWithChild handleClick={goNext}>
+						Next 👉
+					</ButtonWithChild>
 				</Box>
 			</Box>
 		</VStack>
